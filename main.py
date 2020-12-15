@@ -36,11 +36,12 @@ for cat in CATOGORY:
   try:
     file = open(f'{cat}.txt','r')
     codes = file.read()
-    codeList = codes.split('@')
-    print(cat+':开始提交')
-    for code in codeList:
-      if code:
-        submitCode(code,cat)
+    if(codes):
+      codeList = codes.split('@')
+      print(cat+':开始提交')
+      for code in codeList:
+        if code:
+          submitCode(code,cat)
     file.close()
   except Exception as e:
     print(e)
